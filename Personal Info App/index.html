@@ -1,0 +1,134 @@
+<html>
+<head>
+    <style type="text/css" >
+        body {
+            background-color: beige;
+            color: brown;
+            font-style: italic;
+            text-align: center;
+        }
+        div {
+            width: 50%;
+            margin: 0 auto; 
+            padding: 10px;
+           
+        
+        
+        }
+        div.longText {
+            border: 5px solid brown;
+        }
+        
+        div.shortText {
+            background-color: darkgrey;
+        }
+        div.clicked {
+            background-color: white;        
+        }
+    </style>
+   
+    
+</head>
+<body>
+    <h1> Willys PIA </h1>
+    <div class="longText">
+    <h3> My summer </h3>
+    <p> Over the summer I played a lot of soccer and Video Games! I was also able to see my old friends in Indiana for a week. While in Indiana I was also able to see Ariana Grande with my sister in concert. I also went to kings Island with a friend and it was a lot of fun, but super hot.</p>
+        </div>
+    <div class="longText">
+    <h3> Plans after high School </h3>
+     <p>  After Highschool I plan on going to UT or UC and I am not to sure yet what I for certain want to do.
+     <img src="ariana-grande.jpg" width=250 id="img1">
+        </p>
+        </div>
+<p> bruh</p>
+     <script>
+        let person = { 
+            //key : value
+            "firstName" : "William" ,
+            "lastName" : "Rohr" ,
+            "age" : 17 ,
+            "siblings" : ["Rayla"],
+            "favArtist" : ["Ariana Grande"],
+            "favGames" : ["Fortnite" , "Minecraft" , " and super smash bros"],
+            "favSports" : ["Football" , "basketball" , "and soccer"] ,
+            "favActors" : ["Seth Rogen" , "Jennifer Lawrence" , "and Adam Sandlar" ] ,
+        } 
+        console.log(person)
+        console.log(person.age)
+        
+        /*let elem = document.createElement('h3')
+        elem.innerHTML = person.firstName
+        document.body.appendChild(elem)*/ 
+         
+         let elem = document.createElement('div')
+         elem.classList.add('shortText')
+         elem.innerHTML = ` <h3>Name</h3>
+        ${person.firstName} ${person.lastName}`
+         document.body.appendChild(elem)
+         
+         elem = document.createElement('div')
+         elem.classList.add('shortText')
+         elem.innerHTML = ` <h3>Age</h3>
+        ${person.age}` 
+         document.body.appendChild(elem)
+         
+         elem = document.createElement('div')
+         elem.classList.add('shortText')
+         elem.innerHTML = ` <h3>Artist</h3>
+        ${person.favArtist}` 
+         document.body.appendChild(elem)
+         
+         elem = document.createElement('div')
+         elem.classList.add('shortText')
+         elem.innerHTML = ` <h3>Siblings</h3>
+        ${person.siblings}`
+         document.body.appendChild(elem)
+         
+         elem = document.createElement('div')
+         elem.classList.add('shortText')
+         elem.innerHTML = ` <h3>Games</h3>
+        ${person.favGames}`
+         document.body.appendChild(elem)
+         
+         elem = document.createElement('div')
+         elem.classList.add('shortText')
+         elem.innerHTML = ` <h3>Sports</h3>
+        ${person.favSports}`
+         document.body.appendChild(elem)
+         
+         elem = document.createElement('div')
+         elem.classList.add('shortText')
+         elem.innerHTML = ` <h3>Actors</h3>
+        ${person.favActors}`
+         document.body.appendChild(elem)
+         
+        
+         
+         let divs = document.querySelectorAll('div');
+         for (let i = 0; i < divs.length; i++) {
+             let div = divs[i];
+             div.addEventListener('click' , handleClick);
+             
+         }
+         
+         function handleClick(event) {
+             //event.target.style.backgroundColor = "white";
+             event.target.classList.toggle('clicked');
+         }
+        
+         document.querySelector('#img1').addEventListener('click' , handleImgClick)
+         
+             function handleImgClick(event) {
+                 if (event.target.width == 300)
+                     event.target.width = 500
+                 else
+                     event.target.width = 300
+             }
+             
+             
+         
+         
+    </script>
+</body>
+</html> 
